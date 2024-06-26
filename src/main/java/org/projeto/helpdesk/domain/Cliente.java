@@ -1,5 +1,6 @@
 package org.projeto.helpdesk.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -12,6 +13,7 @@ import java.util.List;
 @Entity
 public class Cliente extends Pessoa implements Serializable {
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Chamado> chamados = new ArrayList<>();
 
