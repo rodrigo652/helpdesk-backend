@@ -1,5 +1,6 @@
 package org.projeto.helpdesk.services;
 
+import jakarta.validation.Valid;
 import org.projeto.helpdesk.domain.Pessoa;
 import org.projeto.helpdesk.domain.Tecnico;
 import org.projeto.helpdesk.domain.dtos.TecnicoDTO;
@@ -36,6 +37,15 @@ public class TecnicoService {
         validaPorCpfEEmail(objDTO);
         Tecnico newObj = new Tecnico(objDTO);
         return repository.save(newObj);
+    }
+
+    public Tecnico update(Integer id, @Valid TecnicoDTO objDTO) {
+        objDTO.setId(id);
+        Tecnico oldObj = findById(id);
+        validaPorCpfEEmail(objDTO);
+        oldObj = new Tecnico(objDTO);
+        return repository.save(oldObj);
+
     }
 
     private void validaPorCpfEEmail(TecnicoDTO objDTO) {
