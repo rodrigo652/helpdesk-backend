@@ -1,6 +1,7 @@
 package org.projeto.helpdesk.domain.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.NotNull;
 import org.projeto.helpdesk.domain.Tecnico;
 import org.projeto.helpdesk.domain.enums.Perfil;
 
@@ -13,9 +14,13 @@ import java.util.stream.Collectors;
 public class TecnicoDTO implements Serializable {
 
     protected Integer id;
+    @NotNull(message = "O campo NOME é requerido")
     protected String nome;
+    @NotNull(message = "O campo CPF é requerido")
     protected String cpf;
+    @NotNull(message = "O campo EMAIL é requerido")
     protected String email;
+    @NotNull(message = "O campo SENHA é requerido")
     protected String senha;
     protected Set<Integer> perfis = new HashSet<>();
 

@@ -1,5 +1,6 @@
 package org.projeto.helpdesk.resources;
 
+import jakarta.validation.Valid;
 import org.projeto.helpdesk.domain.Tecnico;
 import org.projeto.helpdesk.domain.dtos.TecnicoDTO;
 import org.projeto.helpdesk.services.TecnicoService;
@@ -33,7 +34,7 @@ public class TecnicoResource {
     }
 
     @PostMapping
-    public ResponseEntity<TecnicoDTO> create(@RequestBody TecnicoDTO objDTO) {
+    public ResponseEntity<TecnicoDTO> create(@Valid @RequestBody TecnicoDTO objDTO) {
         Tecnico newObj = service.create(objDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
         return ResponseEntity.created(uri).build();
