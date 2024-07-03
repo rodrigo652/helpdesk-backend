@@ -1,11 +1,10 @@
 package org.projeto.helpdesk.domain.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.NotNull;
 import org.projeto.helpdesk.domain.Chamado;
-import org.projeto.helpdesk.domain.enums.Prioridade;
-import org.projeto.helpdesk.domain.enums.Status;
 
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 

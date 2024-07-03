@@ -1,10 +1,11 @@
 package org.projeto.helpdesk.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
 import org.hibernate.validator.constraints.br.CPF;
 import org.projeto.helpdesk.domain.enums.Perfil;
 
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;

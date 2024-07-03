@@ -1,13 +1,11 @@
 package org.projeto.helpdesk.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import org.projeto.helpdesk.domain.dtos.ClienteDTO;
-import org.projeto.helpdesk.domain.dtos.TecnicoDTO;
 import org.projeto.helpdesk.domain.enums.Perfil;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

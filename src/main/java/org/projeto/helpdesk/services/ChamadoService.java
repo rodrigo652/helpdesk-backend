@@ -1,6 +1,6 @@
 package org.projeto.helpdesk.services;
 
-import jakarta.validation.Valid;
+
 import org.projeto.helpdesk.domain.Chamado;
 import org.projeto.helpdesk.domain.Cliente;
 import org.projeto.helpdesk.domain.Tecnico;
@@ -12,6 +12,7 @@ import org.projeto.helpdesk.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;

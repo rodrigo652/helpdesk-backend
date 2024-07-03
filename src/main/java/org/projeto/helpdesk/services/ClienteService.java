@@ -1,6 +1,5 @@
 package org.projeto.helpdesk.services;
 
-import jakarta.validation.Valid;
 import org.projeto.helpdesk.domain.Pessoa;
 import org.projeto.helpdesk.domain.Cliente;
 import org.projeto.helpdesk.domain.dtos.ClienteDTO;
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,16 +1,17 @@
 package org.projeto.helpdesk.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
 import org.projeto.helpdesk.domain.enums.Prioridade;
 import org.projeto.helpdesk.domain.enums.Status;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 public class Chamado implements Serializable {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,16 +6,15 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 @Component
 public class JWTUtil {
 
-    @Value("{jwt.expiration}")
+    @Value("${jwt.expiration}")
     private Long expiration;
 
-    @Value("{jwt.secret}")
+    @Value("${jwt.secret}")
     private String secret;
 
     public String generateToken(String email) {
@@ -32,7 +31,8 @@ public class JWTUtil {
             String username = claims.getSubject();
             Date expirationDate = claims.getExpiration();
             Date now = new Date(System.currentTimeMillis());
-            if(username != null && expirationDate != null && now.before(now)) {
+
+            if(username != null && expirationDate != null && now.before(expirationDate)) {
                 return true;
             }
         }
